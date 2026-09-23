@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Engineering case study for Binary Trees in C, a partner project covering tree classification, traversals, binary search trees, and AVL operations." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f6f3" />
+    <title>Binary Trees in C — Case Study</title>
+    <link rel="icon" href="../assets/systemind-mark.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+  </head>
+
+  <body data-page="projects">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="case-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" id="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../index.html" aria-label="Systemind, home"><span class="brand-logo"><picture><source srcset="../assets/systemind-logo-dark.png" media="(prefers-color-scheme: dark)" /><img src="../assets/systemind-logo.png" width="454" height="137" alt="Systemind" /></picture></span></a>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="../index.html" data-page-link="home">Home</a><a href="index.html" data-page-link="projects">Projects</a><a href="../index.html#about" data-page-link="about">About</a><a href="../index.html#expertise" data-page-link="expertise">Expertise</a><a href="../index.html#contact" data-page-link="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="github-link" href="https://github.com/Edwardmurithi/binary_trees" target="_blank" rel="noreferrer" aria-label="Binary Trees project on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.3-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.4-1.3.1-2.7 0 0 .9-.3 2.8 1A9.6 9.6 0 0 1 12 7c.9 0 1.7.1 2.5.4 1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.7Z" /></svg><span>GitHub</span></a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="case-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Projects</a><span>/</span><span>Binary Trees in C</span></nav>
+          <div class="case-hero-grid">
+            <div class="reveal">
+              <p class="section-kicker">Systems · Algorithms</p>
+              <h1>Binary Trees in C</h1>
+              <p class="case-summary">A partner project that turns data-structure theory into working C through classification, traversal, binary search tree, and AVL operations.</p>
+            </div>
+            <aside class="case-status-box reveal">
+              <p>Project status</p>
+              <span class="status status-public">Public repository</span>
+              <p>The source and manual test drivers are public. No automated test-runner, benchmark, or performance result is claimed.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div class="shell">
+        <figure class="case-cover reveal"><img src="../assets/projects/binary-trees-cover.svg" width="1600" height="900" alt="Illustrated C code and binary search tree for the Binary Trees project" /></figure>
+        <dl class="case-meta reveal">
+          <div class="case-meta-item"><span>Role</span><strong>Partner project contributor</strong></div>
+          <div class="case-meta-item"><span>Users</span><p>C learners studying structures and invariants</p></div>
+          <div class="case-meta-item"><span>Architecture</span><p>Modular C source files with a shared API header</p></div>
+          <div class="case-meta-item"><span>Repository</span><p>Public source and manual test drivers</p></div>
+        </dl>
+      </div>
+
+      <section class="case-body-section">
+        <div class="shell case-layout">
+          <aside class="case-sidebar">
+            <span>Case study</span>
+            <nav aria-label="Case study sections">
+              <a href="#overview">Overview</a><a href="#problem">The problem</a><a href="#users">The users</a><a href="#solution">The solution</a><a href="#engineering">Engineering</a><a href="#decisions">Challenges &amp; decisions</a><a href="#results">Results</a><a href="#technology">Technology</a><a href="#links">Links</a>
+            </nav>
+          </aside>
+
+          <div class="case-content">
+            <section id="overview">
+              <p class="section-kicker">Project overview</p>
+              <h2>Learn the structure by implementing its rules.</h2>
+              <p>Binary Trees in C is a partner project focused on the behavior and constraints of tree data structures. The codebase contains implementations for common binary-tree properties, traversal strategies, binary search tree operations, and AVL insertion and validation.</p>
+              <p>The project is structured as many small C modules around a shared header, which makes each operation understandable and testable in isolation while still building toward a complete tree API.</p>
+            </section>
+
+            <section id="problem">
+              <p class="section-kicker">The problem</p>
+              <h2>Tree algorithms are easy to imitate and difficult to internalize.</h2>
+              <p>Reading about preorder, BST insertion, deletion, or balancing can create the illusion of understanding. The real difficulty is preserving the structure through edge cases: empty trees, duplicate values, root removal, and rebalancing after insertion.</p>
+              <p>The partner project therefore focused on implementing and exercising each operation rather than producing a polished application around it.</p>
+            </section>
+
+            <section id="users">
+              <p class="section-kicker">The users</p>
+              <h2>A learning codebase for C students.</h2>
+              <p>The immediate users are the project partners and other C learners who want to inspect concrete implementations of tree invariants. The public repository also helps reviewers understand the scope of the completed work without relying on a marketing description.</p>
+            </section>
+
+            <section id="solution">
+              <p class="section-kicker">The solution</p>
+              <h2>Small operations that compose into complete tree behavior.</h2>
+              <ul>
+                <li>Node creation, deletion, and structural inspection.</li>
+                <li>Preorder, inorder, postorder, and level-order traversal.</li>
+                <li>Tree properties including leaf, root, full, perfect, and complete checks.</li>
+                <li>Binary search tree insertion, search, removal, and validation.</li>
+                <li>AVL balance checks, rotation helpers, and insertion logic.</li>
+                <li>Manual test drivers that print and inspect concrete tree states.</li>
+              </ul>
+            </section>
+
+            <section id="engineering">
+              <p class="section-kicker">Engineering</p>
+              <h2>A small API makes correctness visible.</h2>
+              <h3>Modular source</h3>
+              <p>The repository uses focused C files for individual operations and a shared header that defines the public tree interface. That structure keeps recursion and pointer manipulation isolated instead of concentrating them in a single large file.</p>
+              <h3>Binary search invariants</h3>
+              <p>BST operations preserve ordering on both sides of each node. Search follows the value relationship, insertion chooses the correct branch, and removal handles root, leaf, and one-child cases without discarding unrelated subtrees.</p>
+              <h3>AVL behavior</h3>
+              <p>AVL-related modules include validation, rotation helpers, and insertion logic. The public case study avoids claiming a complete heap implementation because the source files for that portion are not present in the inspected repository.</p>
+              <h3>Testing boundary</h3>
+              <p>The project includes a tests directory with manual drivers, but no Makefile or assertion-based test runner is present. The case study therefore describes the source honestly without presenting it as a continuously verified benchmark suite.</p>
+            </section>
+
+            <section id="decisions">
+              <p class="section-kicker">Challenges &amp; decisions</p>
+              <h2>Preserve correctness before optimizing.</h2>
+              <ul>
+                <li>Represent tree relationships explicitly through node pointers rather than hidden state.</li>
+                <li>Separate traversal and classification from mutation operations.</li>
+                <li>Handle root removal as a distinct case because it changes the tree root.</li>
+                <li>Use rotation helpers to make AVL intent visible in insertion logic.</li>
+                <li>Leave unsupported claims out when source files or test infrastructure are incomplete.</li>
+              </ul>
+              <p class="case-callout">The project favors inspectable implementations and honest scope over benchmark numbers that the repository cannot substantiate.</p>
+            </section>
+
+            <section id="results">
+              <p class="section-kicker">Results</p>
+              <h2>A public, inspectable record of applied data-structure work.</h2>
+              <div class="case-result">
+                <strong>What is evidenced</strong>
+                <p>The public repository contains 37 C source files, a shared API header, and a tests directory with manual drivers covering tree operations, traversals, BST behavior, and AVL-related logic.</p>
+              </div>
+              <p>The repository does not include an automated build, assertion suite, benchmark, or measured runtime result. Those are useful next steps, but they are not presented as completed work.</p>
+            </section>
+
+            <section id="technology">
+              <p class="section-kicker">Technology</p>
+              <h2>Techniques and tools used.</h2>
+              <ul class="technology-list"><li>C</li><li>Recursion</li><li>Pointer-based data structures</li><li>Binary Trees</li><li>Binary Search Trees</li><li>AVL Trees</li><li>Manual Testing</li><li>Git</li></ul>
+            </section>
+
+            <section id="links">
+              <p class="section-kicker">Links</p>
+              <h2>Explore the source.</h2>
+              <p>The project has a verified public repository. There is no separate deployed demo or performance report.</p>
+              <div class="case-links"><a class="button button-primary" href="https://github.com/Edwardmurithi/binary_trees" target="_blank" rel="noreferrer">View GitHub repository <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13 13 7M8 7h5v5" /></svg></a><a class="button button-secondary" href="../index.html#contact">Discuss the implementation</a></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-case"><div class="shell"><a href="jitume.html"><span>Return to case study<strong>JITUME TVET</strong></span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16h22M20 9l7 7-7 7" /></svg></a></div></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top"><a class="brand footer-brand" href="../index.html" aria-label="Systemind, home"><span class="brand-logo"><picture><source srcset="../assets/systemind-logo-dark.png" media="(prefers-color-scheme: dark)" /><img src="../assets/systemind-logo.png" width="454" height="137" alt="Systemind" /></picture></span></a><p>Engineering useful systems, one problem at a time.</p><a class="back-to-top" href="#main-content">Back to top ↑</a></div>
+      <div class="shell footer-bottom"><p>© <span id="current-year">2026</span> Edward Mutetethia</p><nav aria-label="Footer navigation"><a href="../index.html">Home</a><a href="index.html">Projects</a><a href="../index.html#contact">Contact</a></nav></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Engineering case study for JITUME TVET, a self-hosted Laravel information platform for programmes, opportunities, partners, resources, and secure stakeholder intake." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f6f3" />
+    <title>JITUME TVET — Case Study</title>
+    <link rel="icon" href="../assets/systemind-mark.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+  </head>
+
+  <body data-page="projects">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="case-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" id="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../index.html" aria-label="Systemind, home">
+          <span class="brand-logo"><picture><source srcset="../assets/systemind-logo-dark.png" media="(prefers-color-scheme: dark)" /><img src="../assets/systemind-logo.png" width="454" height="137" alt="Systemind" /></picture></span>
+        </a>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="../index.html" data-page-link="home">Home</a>
+          <a href="index.html" data-page-link="projects">Projects</a>
+          <a href="../index.html#about" data-page-link="about">About</a>
+          <a href="../index.html#expertise" data-page-link="expertise">Expertise</a>
+          <a href="../index.html#contact" data-page-link="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="github-link" href="https://github.com/edwardmutethia" target="_blank" rel="noreferrer" aria-label="Edward Mutetethia on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.3-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.4-1.3.1-2.7 0 0 .9-.3 2.8 1A9.6 9.6 0 0 1 12 7c.9 0 1.7.1 2.5.4 1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.6 5c.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.7Z" /></svg><span>GitHub</span></a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="case-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Projects</a><span>/</span><span>JITUME TVET</span></nav>
+          <div class="case-hero-grid">
+            <div class="reveal">
+              <p class="section-kicker">Web application · Backend system</p>
+              <h1>JITUME TVET</h1>
+              <p class="case-summary">A self-hosted Laravel platform that gives people a clearer path to TVET programmes, opportunities, partners, resources, and responsible next steps.</p>
+            </div>
+            <aside class="case-status-box reveal">
+              <p>Project status</p>
+              <span class="status status-ready">Code-ready</span>
+              <p>The implementation is complete enough for review and deployment preparation, with production infrastructure and governance gates still outstanding.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div class="shell">
+        <figure class="case-cover reveal">
+          <img src="../assets/projects/jitume-cover.svg" width="1600" height="900" alt="Illustrated preview of the JITUME public portal and platform modules" />
+        </figure>
+        <dl class="case-meta reveal">
+          <div class="case-meta-item"><span>Role</span><strong>Product engineering &amp; platform implementation</strong></div>
+          <div class="case-meta-item"><span>Users</span><p>Learners, TVET institutions, partners, and programme staff</p></div>
+          <div class="case-meta-item"><span>Architecture</span><p>Laravel application, PostgreSQL, Redis, workers, and scheduler</p></div>
+          <div class="case-meta-item"><span>Deployment</span><p>Docker Compose with Nginx and PHP-FPM</p></div>
+        </dl>
+      </div>
+
+      <section class="case-body-section">
+        <div class="shell case-layout">
+          <aside class="case-sidebar">
+            <span>Case study</span>
+            <nav aria-label="Case study sections">
+              <a href="#overview">Overview</a>
+              <a href="#problem">The problem</a>
+              <a href="#users">The users</a>
+              <a href="#solution">The solution</a>
+              <a href="#engineering">Engineering</a>
+              <a href="#decisions">Challenges &amp; decisions</a>
+              <a href="#results">Results</a>
+              <a href="#technology">Technology</a>
+              <a href="#links">Links</a>
+            </nav>
+          </aside>
+
+          <div class="case-content">
+            <section id="overview">
+              <p class="section-kicker">Project overview</p>
+              <h2>A public information service with an operational backbone.</h2>
+              <p>JITUME TVET is designed as more than a brochure website. It combines a public programme and opportunity directory, a versioned JSON API, encrypted citizen and stakeholder intake, and a permission-gated administration portal.</p>
+              <p>The public side is server-rendered for clear content discovery and search. The internal side supports publishing, review, media, submissions, users, roles, audit history, and site settings. Queue workers and scheduled jobs handle notifications, retention, publication expiry, and media cleanup.</p>
+            </section>
+
+            <section id="problem">
+              <p class="section-kicker">The problem</p>
+              <h2>Opportunity information is fragmented and difficult to verify.</h2>
+              <p>People looking for digital-skills pathways can encounter outdated programme details, informal sources, and unclear next steps. Institutions and partners also need a dependable way to publish approved information without editing an unstructured collection of pages.</p>
+              <p>The product problem is therefore both public and operational: give residents a trustworthy discovery experience while giving programme teams a controlled way to manage the underlying content.</p>
+            </section>
+
+            <section id="users">
+              <p class="section-kicker">The users</p>
+              <h2>Different workflows, one source of published truth.</h2>
+              <ul>
+                <li><strong>Learners and job seekers</strong> need current programmes, eligibility guidance, resources, and legitimate next steps.</li>
+                <li><strong>TVET institutions and trainers</strong> need structured programme, opportunity, and resource workflows.</li>
+                <li><strong>Partners and sponsors</strong> need accurate public visibility and a controlled engagement path.</li>
+                <li><strong>Internal staff</strong> need review, approval, publishing, submission handling, roles, and auditability.</li>
+              </ul>
+            </section>
+
+            <section id="solution">
+              <p class="section-kicker">The solution</p>
+              <h2>One platform across discovery, intake, and administration.</h2>
+              <h3>Public experience</h3>
+              <p>Programme catalogues, opportunity pages, stories, news, events, partners, resources, FAQs, downloads, search, and accessibility/support pages are backed by a shared content model and publication state.</p>
+              <h3>Directory API</h3>
+              <p>A versioned <code>/api/v1</code> surface exposes published programme, opportunity, county, story, news, event, resource, FAQ, search, and submission-intake endpoints without exposing arbitrary draft records.</p>
+              <h3>Secure intake and administration</h3>
+              <p>Citizen and stakeholder submissions include validation, consent capture, rate limits, idempotency keys, encrypted sensitive fields, retention dates, and queued notifications. Administration uses role and permission checks for every protected surface.</p>
+            </section>
+
+            <section id="engineering">
+              <p class="section-kicker">Engineering</p>
+              <h2>Operational concerns designed into the architecture.</h2>
+              <h3>Application and data</h3>
+              <p>The active application uses Laravel, Blade, Vite, PostgreSQL, and Redis. Models cover content lifecycle, users, permissions, submissions, media, audit records, settings, and publication state. Database migrations and seed data are separated from normal application startup.</p>
+              <h3>Publishing integrity</h3>
+              <p>Ordinary content changes use a four-eyes review flow with exact-revision checks, publication and expiry states, and immutable audit events. Public content is served only after publication rules are satisfied.</p>
+              <h3>Infrastructure</h3>
+              <p>Docker Compose defines Nginx, PHP-FPM, the application, a queue worker, a scheduler, PostgreSQL, and Redis. Internal networking keeps data services private, while health checks, persistent volumes, backup/restore scripts, and retry-aware queues support operational readiness.</p>
+              <h3>Quality and security</h3>
+              <p>The repository includes PHPUnit unit and feature coverage, API and authorization tests, upload security tests, Playwright checks at mobile widths, Axe accessibility checks, dependency audits, and container builds. No current test count is claimed here without rerunning the checkout.</p>
+            </section>
+
+            <section id="decisions">
+              <p class="section-kicker">Challenges &amp; decisions</p>
+              <h2>Protect trust without making the public product difficult to use.</h2>
+              <p>Public discovery and internal governance have different security and consistency requirements. The solution keeps the public experience simple while moving sensitive operations behind explicit authorization, validation, and workflow boundaries.</p>
+              <ul>
+                <li>Published directory records are separated from draft and expired content.</li>
+                <li>Sensitive intake fields are encrypted, rate-limited, idempotent, and assigned retention dates.</li>
+                <li>Content publication uses exact revision checks to prevent approving a document that changed after review.</li>
+                <li>Database, Redis, and media services are not exposed as public application ports.</li>
+                <li>Local centre-directory data was retired in favor of a configured external directory boundary.</li>
+              </ul>
+              <p class="case-callout">The key decision was to make operational integrity part of the product model, not an admin-only afterthought.</p>
+            </section>
+
+            <section id="results">
+              <p class="section-kicker">Results</p>
+              <h2>A code-ready platform with an explicit path to production.</h2>
+              <div class="case-result">
+                <strong>What is evidenced</strong>
+                <p>The repository now contains a complete public portal, versioned directory API, secure intake flows, publishing workflow, administration portal, containerized services, operational scripts, and broad automated test categories.</p>
+              </div>
+              <p>Production launch still depends on infrastructure choices, secret custody, TLS, mail delivery, monitoring, backup restoration, governance staffing, and representative load testing. Learner, employment, income, adoption, and performance metrics are not claimed because verified outcome data is not available.</p>
+            </section>
+
+            <section id="technology">
+              <p class="section-kicker">Technology</p>
+              <h2>Technologies used in the active implementation.</h2>
+              <ul class="technology-list">
+                <li>PHP 8.3+</li><li>Laravel 13</li><li>Blade</li><li>Vite</li><li>PostgreSQL 16</li><li>Redis 7</li><li>Docker Compose</li><li>Nginx</li><li>PHP-FPM</li><li>PHPUnit</li><li>Playwright</li><li>Axe</li><li>GitHub Actions</li>
+              </ul>
+            </section>
+
+            <section id="links">
+              <p class="section-kicker">Links</p>
+              <h2>Project access and discussion.</h2>
+              <p>The repository is not presented as public, and no verified live deployment is linked. Architecture and implementation discussions are available directly.</p>
+              <div class="case-links">
+                <a class="button button-primary" href="../index.html#contact">Discuss this project</a>
+                <span class="button button-secondary" aria-disabled="true">Live demo not verified</span>
+                <span class="button button-secondary" aria-disabled="true">Repository not public</span>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-case">
+        <div class="shell">
+          <a href="coachflow.html">
+            <span>Next case study<strong>CoachFlow</strong></span>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16h22M20 9l7 7-7 7" /></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top">
+        <a class="brand footer-brand" href="../index.html" aria-label="Systemind, home"><span class="brand-logo"><picture><source srcset="../assets/systemind-logo-dark.png" media="(prefers-color-scheme: dark)" /><img src="../assets/systemind-logo.png" width="454" height="137" alt="Systemind" /></picture></span></a>
+        <p>Engineering useful systems, one problem at a time.</p>
+        <a class="back-to-top" href="#main-content">Back to top ↑</a>
+      </div>
+      <div class="shell footer-bottom"><p>© <span id="current-year">2026</span> Edward Mutetethia</p><nav aria-label="Footer navigation"><a href="../index.html">Home</a><a href="index.html">Projects</a><a href="../index.html#contact">Contact</a></nav></div>
+    </footer>
+  </body>
+</html>

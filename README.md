@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Edward Mutetethia — Product Engineer Portfolio
 
-## Getting Started
+A responsive, dependency-free portfolio built with semantic HTML, modern CSS, and vanilla JavaScript.
 
-First, run the development server:
+## Pages
+
+- `index.html` — homepage, introduction, selected projects, expertise, stack, process, GitHub, about, and contact
+- `projects/index.html` — complete project index
+- `projects/jitume.html` — JITUME TVET case study
+- `projects/coachflow.html` — CoachFlow case study
+- `projects/binary-trees.html` — Binary Trees in C case study
+
+## Preview locally
+
+From this directory, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+python3 -m http.server 8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Homepage: `http://localhost:8000`
+- Projects: `http://localhost:8000/projects/`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The pages can also be opened directly, although a local server is recommended for consistent browser behavior.
 
-## Learn More
+## Personal media
 
-To learn more about Next.js, take a look at the following resources:
+### Profile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Replace `assets/profile.svg` with a real profile photograph, then update the image `src`, dimensions, and `alt` text in `index.html`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Introduction video
 
-## Deploy on Vercel
+`assets/edward-mutetethia-pitch.webm` currently contains a short branded motion-graphic placeholder. Replace it with the final introduction recording, or update the source in `index.html`. The visible duration updates from the actual video metadata.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact form
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The form supports two delivery modes:
+
+1. **Default static-site mode:** validates the form and prepares a message in the visitor's email client.
+2. **Endpoint mode:** set `data-endpoint` on the form to a Formspree, Basin, Getform, or compatible JSON endpoint to send the form with `fetch()`.
+
+Example:
+
+```html
+<form data-contact-form data-endpoint="https://form-endpoint.example/submit">
+```
+
+The JavaScript includes field validation, loading state, success state, error handling, and a honeypot field.
+
+## Theme behavior
+
+The site automatically follows the operating system's light or dark appearance. CSS custom properties and `@media (prefers-color-scheme: dark)` keep both palettes consistent; JavaScript synchronizes browser theme metadata and responds to system changes.
+
+## Project-content policy
+
+Project descriptions intentionally avoid invented users, revenue, performance, adoption, or outcome metrics. Update case studies only when verified evidence becomes available.
