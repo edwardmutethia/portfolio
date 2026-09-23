@@ -198,8 +198,8 @@ if (contactForm) {
     const formData = new FormData(contactForm);
     const name = String(formData.get('name') || '').trim();
     const email = String(formData.get('email') || '').trim();
-    const subject = String(formData.get('subject') || '').trim();
     const message = String(formData.get('message') || '').trim();
+    const subject = message.split(/\s+/).slice(0, 8).join(' ') || 'Project inquiry';
 
     submitButton?.classList.add('is-loading');
     submitButton?.setAttribute('aria-busy', 'true');
@@ -239,7 +239,7 @@ if (contactForm) {
       submitButton?.classList.remove('is-loading');
       submitButton?.removeAttribute('aria-busy');
       if (submitButton instanceof HTMLButtonElement) submitButton.disabled = false;
-      if (buttonLabel) buttonLabel.textContent = 'Start a conversation';
+      if (buttonLabel) buttonLabel.textContent = 'Send message';
     }
   });
 }
