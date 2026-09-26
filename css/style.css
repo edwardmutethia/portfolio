@@ -395,14 +395,17 @@ img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0 auto 1.5rem;
-    color: white;
-    font-size: 3.5rem;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    border: 4px solid white;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .profile-info {
