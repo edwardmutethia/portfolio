@@ -136,17 +136,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 16);
     }
 
-    // Video hover autoplay handler
+    // Video click-to-play + pause when not visible
     const videoContainer = document.querySelector('.video-container');
     const pitchVideo = document.getElementById('pitchVideo');
 
     if (videoContainer && pitchVideo) {
-        videoContainer.addEventListener('mouseenter', function() {
+        // Click to play
+        videoContainer.addEventListener('click', function() {
             const currentSrc = pitchVideo.src;
             if (!currentSrc.includes('autoplay=1')) {
                 pitchVideo.src = currentSrc + '&autoplay=1';
             }
         });
+
+        // Pause when not visible in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    // Video is hidden — pause by reloading without autoplay
+                    const src = pitchVideo.src;
+                    if (src.includes('autoplay=1')) {
+                        pitchVideo.src = src.replace('&autoplay=1', '');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(videoContainer);
     }
 
     // Contact form handler
