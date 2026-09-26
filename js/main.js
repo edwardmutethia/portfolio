@@ -67,16 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 16);
     }
 
-    // Video play button handler
-    const playBtn = document.getElementById('playBtn');
-    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    // Video hover autoplay handler
+    const videoContainer = document.querySelector('.video-container');
     const pitchVideo = document.getElementById('pitchVideo');
 
-    if (playBtn && videoPlaceholder && pitchVideo) {
-        playBtn.addEventListener('click', function() {
-            pitchVideo.src = 'https://www.youtube.com/embed/UldaND7ug6I?autoplay=1&rel=0';
-            videoPlaceholder.style.display = 'none';
-            pitchVideo.style.display = 'block';
+    if (videoContainer && pitchVideo) {
+        videoContainer.addEventListener('mouseenter', function() {
+            const currentSrc = pitchVideo.src;
+            if (!currentSrc.includes('autoplay=1')) {
+                pitchVideo.src = currentSrc + '&autoplay=1';
+            }
         });
     }
 

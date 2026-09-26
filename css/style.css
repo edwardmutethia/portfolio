@@ -534,58 +534,7 @@ img {
 }
 
 .video-placeholder {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.video-placeholder:hover {
-    transform: scale(1.02);
-}
-
-.video-play-btn {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.video-play-btn i {
-    font-size: 1.75rem;
-    color: var(--primary);
-    margin-left: 4px;
-}
-
-.video-play-btn:hover {
-    transform: scale(1.1);
-    background: white;
-}
-
-.video-overlay {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-}
-
-.video-duration {
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-    font-weight: 500;
+    display: none;
 }
 
 .video-info h3 {
